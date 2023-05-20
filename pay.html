@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Pago</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/paystyles.css">
+</head>
+<body>
+	<div class="modal">
+		<form class="form">
+			<div class="paymentother">
+                
+				<button name="Master Card" type="button">
+                    <img src="img/MasterCard.png" height="50px" width="55px"/>
+				</button>
+				<button name="google-pay" type="button">
+					<img src="img/visa-logo.png" height="50px" width="60px"/>
+				</button>
+			</div>
+			<div class="separator">
+				<hr class="line">
+				<p>O</p>
+				<hr class="line">
+			</div>
+			<div class="card-info">
+				<div class="input_container">
+					<label class="input_label">Nombre</label>
+					<input class="input_field" type="text" placeholder="Ingresa tu nombre completo">
+				</div>
+				<div class="input_container">
+					<label class="input_label">Numero de tarjeta</label>
+					<input class="input_field" type="number" placeholder="0000 0000 0000 0000">
+				</div>
+				<div class="input_container">
+					<label class="input_label">Fecha de expiración / CVV</label>
+					<div class="split">
+						<input class="input_field" style="width: 250px;" type="text" placeholder="01/23">
+						<input class="input_field" style="width: 110px;" type="number" placeholder="CVV">
+					</div>
+				</div>
+			</div>
+           
+			<button class="checkout" style="cursor: pointer;">
+				<span>Pagar</span>
+			</button>
+        
+		</form>
+	</div>
+</body>
+</html>
