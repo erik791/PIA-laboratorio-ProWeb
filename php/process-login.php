@@ -27,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else {
             die("Incorrecto.");
         }
+    }else{
+        die("Vacio");
     }
 }
 ?>
