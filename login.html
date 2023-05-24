@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styleLogin.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  
+
   <!-- Bootstrap v5.2.0 -->
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,7 +21,8 @@
       <div class="container">
         <h1 class="titulo">NEA<span>MX</span></h1>
       <div class="row full-height justify-content-center">
-        <div class="col-12 text-center align-self-center py-5">
+        
+        <div class="col-12 text-center align-self-top py-5">
           <div class="section pb-5 pt-5 pt-sm-2 text-center">
             <h6 class="mb-0 pb-3"><span>Iniciar sesión </span><span>Regisitrate</span></h6>
             <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
@@ -30,7 +35,7 @@
                   <div class="center-wrap">
                     <div class="section text-center">
                       <h4 class="mb-4 pb-3">Iniciar sesión</h4>
-                      <form action="php/process-login.php" method="POST">
+                      <form method="POST" id="myForm">
                         <div class="form-group">
                           <input type="email" class="form-style" placeholder="Correo Electronico" name="email" id="email">
                           <i class="input-icon uil uil-at"></i>
@@ -51,7 +56,7 @@
                 <div class="card-back">
                   <div class="center-wrap">
                     <div class="section text-center">
-                      <form action="php/process-signup.php" method="post">
+                      <form id="myFormSign" method="POST">
                         <h4 class="mb-3 pb-3">Regisitrate</h4>
                         <div class="form-group">
                           <input type="text" class="form-style" id="name" placeholder="Nombre completo" name="name">
@@ -84,6 +89,13 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="Js/script.js"></script>
+      <div class="alert hide">
+         <span class="fas fa-exclamation-circle"></span>
+         <span class="msg" id="ms-advertecia"></span>
+         <div class="close-btn">
+            <span class="fas fa-times"></span>
+         </div>
+      </div>
+      <script src="js/advertencia.js"></script>
 </body>
 </html>

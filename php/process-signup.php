@@ -2,33 +2,40 @@
 
 // Verifica entrada "Nombre completo"
 if(empty($_POST["name"])){
-    die("Nombre requerido.");
+    echo "Nombre requerido.";
+    exit;
 } 
 
 // Verifica entrada "Correo Electronico"
 if(empty($_POST["email"])){
-    die("Correo electronico requerido.");
+    echo"Correo electronico requerido.";
+    exit;
 } 
 
 // Validacion de contraseña
 if(strlen($_POST["pass"]) < 8){
-    die("La contraseña debe de tener mas de 8 caracteres.");
+    echo "La contraseña debe de tener mas de 8 caracteres.";
+    exit;
 }
 
 // Verificar si la contraseña contiene letras
 if(!preg_match("/[a-z]/i",$_POST["pass"])){
-    die("La contraseña debe de tener almenos una letra.");
+    echo "La contraseña debe de tener almenos una letra.";
+    exit;
 }
 
 // Verificar si la contraseña contiene numeros
 if(!preg_match("/[0-9]/i",$_POST["pass"])){
-    die("La contraseña debe de tener almenos un numero.");
+    echo "La contraseña debe de tener almenos un numero.";
+    exit;
 }
 
 // Confirmar contraseña repetida
 if($_POST["pass"] !== $_POST["pass_confirmation"]){
-    die("Las contraseñas no coinciden.");
+    echo "Las contraseñas no coinciden.";
+    exit;
 }
+
 
 // Metodo hashing para mantener seguridad de contraseña
 $password_hash = password_hash($_POST["pass"], PASSWORD_DEFAULT);
@@ -48,7 +55,7 @@ $stmt->close();
 
 if ($emailCount > 0) {
     // El correo electrónico ya existe en la base de datos
-    die("El correo electrónico ya está registrado.");
+    echo "El correo electrónico ya está registrado.";
 } else {
 
     $sql = "INSERT INTO usuarios (nombre, Email, Password_hash, Rol_id)
@@ -68,14 +75,12 @@ if ($emailCount > 0) {
 
     if ($stmt->execute()) {
         #echo "Cuenta creada correctamente.";
-        header("Location: /login.html");
-        exit;
+        
+        echo true;
     } else {
         die("Error al crear la cuenta: " . $stmt->error);
     }
     $stmt->close();
 }
-
-                    
 
 ?>

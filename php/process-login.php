@@ -22,13 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             $_SESSION["user_id"] = $user["id_Usuario"];
             
-            header("Location: /index.html");
-            exit;
+            $texto = true;
         } else {
-            die("Incorrecto.");
+            $texto = "Datos incorrectos";
         }
     }else{
-        die("Vacio");
+        $texto = "vacio";
     }
 }
+
+echo $texto;
 ?>
