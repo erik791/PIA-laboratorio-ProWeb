@@ -14,38 +14,41 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $precio = $_POST['precio'];
   $descripcion = $_POST['descripcion'];
   $categoria = $_POST['categoria'];
+  $imagen = $_FILES['imagen']['name'];
 
+  if(isset($imagen) && $imagen != ""){
+    $tipo = $_FILES['imagen']['type'];
+    $temp  = $_FILES['imagen']['tmp_name'];
 
-  // Procesar la imagen
-  $imagen = $_FILES['imagen'];
-  $nombreArchivo = $imagen['name'];
-  $rutaArchivoTemp = $imagen['tmp_name'];
+    if( !((strpos($tipo,'png') || strpos($tipo,'jpeg')))){
+      echo 'Solo imagenes jpeg, png, webp';
+      exit;
+    }else{
+      if (file_exists($temp)){
 
-  // Generar un nombre único para el archivo
-  $extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
-  $nombreUnico = uniqid() . '.' . $extension;
+        if(!(move_uploaded_file($temp,'img/productos/'.$imagen))){
+          echo "No se puede mover";
+          exit;
+        }  
+        // Preparar la consulta SQL
+        $stmt = $mysqli->prepare("INSERT INTO productos (Nombre_producto, Precio, Descripcion, Categoria_id, Imagen, Activo) VALUES (?, ?, ?, ?, ?, 1)");
+        $stmt->bind_param("sdsis", $nombre, $precio, $descripcion, $categoria, $imagen);
+        
+        // Ejecutar la consulta
+        if ($stmt->execute()) { 
+          echo "Registro Exitoso.";
 
-  // Definir la ruta de destino para guardar la imagen
-  $rutaDestino = "img/productos/" . $nombreUnico;
+        } else {
+          echo "Registro Fallido.";
 
-  // Mover la imagen al directorio de destino
-  if (move_uploaded_file($rutaArchivoTemp, $rutaDestino)) {
-    // Preparar la consulta SQL
-    $stmt = $mysqli->prepare("INSERT INTO productos (Nombre_producto, Precio, Descripcion, Imagen, Categoria_id, Activo) VALUES (?, ?, ?, ?, ?, 1)");
-    $stmt->bind_param("sdsii", $nombre, $precio, $descripcion, $nombreArchivo, $categoria);
-
-    // Ejecutar la consulta
-    if ($stmt->execute()) {
-      echo "El producto se ha registrado correctamente.";
-    } else {
-      echo "Ha ocurrido un error al registrar el producto.";
+        }
+      }
     }
-
-    $stmt->close();
-  } else {
-    echo "Ha ocurrido un error al subir la imagen.";
   }
+  
 
+  //Terminar Proceso
+  $stmt->close();
   $mysqli->close();
 }
 ?>
