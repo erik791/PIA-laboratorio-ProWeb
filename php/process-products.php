@@ -14,7 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $precio = $_POST['precio'];
   $descripcion = $_POST['descripcion'];
   $categoria = $_POST['categoria'];
-  $imagen = $_FILES['imagen']['name'];
+  
+  if(!(isset($_POST['categoria']))){
+    echo "Invalido.";
+
+    $categoria = $_POST['categoria'];
+    echo "La categoría seleccionada es: " . $categoria;
+
+    exit;
+  }
+
 
   if(isset($imagen) && $imagen != ""){
     $tipo = $_FILES['imagen']['type'];
