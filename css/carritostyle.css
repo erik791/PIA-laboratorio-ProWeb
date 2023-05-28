@@ -374,7 +374,7 @@
     position: relative;
     border-radius: 0.45em;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-    transition: background 0.3s;
+    /*transition: background 0.3s;*/
   }
   
   .button::before {
@@ -473,6 +473,11 @@
   
   .button:hover:before {
     bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+
+  #articulo {
+    width: 150px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
   }
   
   

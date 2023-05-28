@@ -29,6 +29,12 @@ body {
     font-family: 'Krub', sans-serif;
     background-image: linear-gradient(to top, var(--grisFuerte) 0%, var(--grisClaro) 100% );
 }
+
+#articulo {
+    width: 150px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+}
+
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
