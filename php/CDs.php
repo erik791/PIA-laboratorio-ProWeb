@@ -101,11 +101,12 @@
                             <div class="info-product">
                                 <h2>' . $nombre . '</h2>
                                 <p class="price">$' . $precio . '</p>
-                                <button>Añadir al carrito</button>
+                                <button onClick="agregarProducto(<?php echo $id; ?>, <?php echo $token_tmp; ?> )">Añadir al carrito</button>
                             </div>
                         </div>';
                     }
                 ?>
+                
             </div>
         </main>
         <br>

@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preload" href="css/styles.css" as="style">
     <link href="css/styles2.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
     <header>
@@ -27,30 +29,68 @@
     </div>
     <br>
     <main class="contenedor sombra">
-
         <h2>Tus compras</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row" class="align-middle">
+                      <img src="img/caifanes.avif" class="img-thumbnail img-fluid" style="width: auto; height: 100px;">
+                    </td>
+                    <td class="align-middle">
+                        Smartphone
+                    </td>
+                    <td class="align-middle">
+                        $399
+                    </td>
+                    <td class="align-middle">
+                        <input type="number" id="cantidad" name="cantidad" min="1" value="1" required style="width: 70px; height: 30px;">
+                    </td>
+                    <td class="align-middle">
+                      ?
+                    </td>
+                    <td class="align-middle">
+                      <button type="button" class="btn btn-outline-danger btn-lg">Eliminar</button>
+                    </td>
+                  </tr>
+
+                  
+
+              <!-- Linea Final comprar y total -->
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td class="align-middle">
+                    <h3 class="fw-bolder">Total:</h3>
+                </td>
+                <td class="align-middle">
+                    <h3 class="fw-bolder">$699.99</h3>
+                </td>
+                <td class="align-middle">
+                    <button type="button" class="btn btn-outline-success btn-lg">Continuar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
         
+        
 
-
-
-
-        <a href="pay.html">
-        <div data-tooltip="Vamos" class="button">
-            <div class="button-wrapper">
-              <div class="text">Pagar</div>
-                <span class="icon">
-                  <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-            </svg>
-                </span>
-              </div>
-            </div>
-            </a>
-            
-
+        
+        
+        
    
-       </main>
+    </main>
         
        <br>
 
