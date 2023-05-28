@@ -6,6 +6,7 @@
     --gris: #757575;
     --grisClaro: #b3b7bb;
     --grisFuerte: #595c5f ;
+    --negroFondo: #2a2a2b ; 
 }
 /*  Globales **/
 html {
@@ -19,7 +20,7 @@ html {
 body {
     font-size: 16px; /* 1rem = 10px */
     font-family: 'Krub', sans-serif;
-    background-image: linear-gradient(to top, var(--grisFuerte) 0%, var(--grisClaro) 100% );
+    background-image: linear-gradient(rgb(238, 255, 0), rgb(243, 3, 3) );
 }
 .contenedor {
     max-width: 120rem;
@@ -49,7 +50,7 @@ body {
 }
 
 .sombra {
-    box-shadow: 0px 5px 15px 0px rgba(255, 255, 255, 0.48);
+    box-shadow: 0px 5px 15px 0px rgba(87, 84, 84, 0.48);
     background-color: var(--blanco);
     padding: 2rem;
     border-radius: 1rem;
@@ -71,6 +72,10 @@ h1,h2,h3 {
 
 
 /* Titulos */
+.titulo{
+    color: var(--oscuro);
+}
+
 .titulo span {
     font-size: 2rem;
 }
@@ -97,7 +102,7 @@ h1,h2,h3 {
 
 /* Navegacion Principal */
 .nav-bg {
-    background-color: var(--secundario);
+    background-color: var(--oscuro);
 }
 .navegacion-principal {
     display: flex;
@@ -120,7 +125,7 @@ h1,h2,h3 {
     padding: 1rem;
 }
 .navegacion-principal a:hover {
-    background-color: var(--primario);
+    background-color: var(--blanco);
     color: var(--oscuro);
 }
 
