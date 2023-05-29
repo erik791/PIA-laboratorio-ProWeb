@@ -13,17 +13,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $nombre = $_POST['nombre'];
   $precio = $_POST['precio'];
   $descripcion = $_POST['descripcion'];
-  $categoria = $_POST['categoria'];
+  $imagen = $_FILES['imagen']['name'];
+  $categoria = intval($_POST['categoria']);
   
-  if(!(isset($_POST['categoria']))){
-    echo "Invalido.";
-
-    $categoria = $_POST['categoria'];
-    echo "La categoría seleccionada es: " . $categoria;
-
-    exit;
+  if(!(isset($categoria))){
+    echo "Introduce una categoria";
   }
-
 
   if(isset($imagen) && $imagen != ""){
     $tipo = $_FILES['imagen']['type'];
@@ -46,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Ejecutar la consulta
         if ($stmt->execute()) { 
           echo "Registro Exitoso.";
+          $stmt->close();
 
         } else {
           echo "Registro Fallido.";
@@ -57,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   
 
   //Terminar Proceso
-  $stmt->close();
   $mysqli->close();
 }
 ?>
