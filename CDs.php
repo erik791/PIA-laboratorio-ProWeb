@@ -49,34 +49,6 @@
                     <div class="count-products">
                         <span id="contador-productos">0</span>
                     </div>
-
-                    <div class="container-cart-products hidden-cart">
-                        <div class="cart-product">
-                            <div class="info-cart-product">
-                                <span class="cantidad-producto-carrito">1</span>
-                                <p class="titulo-producto-carrito">Zapatos Nike</p>
-                                <span class="precio-producto-carrito">$80</span>
-                            </div>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                class="icon-close"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>
-                        </div>
-                        <div class="cart-total">
-                            <h3>Total:</h3>
-                            <span class="total-pagar">$200</span>
-                        </div>
-                    </div>
                 </div>
             </header>
 
