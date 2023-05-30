@@ -49,6 +49,8 @@ body {
     cursor: pointer;
 }
 
+
+
 .sombra {
     box-shadow: 0px 5px 15px 0px rgba(87, 84, 84, 0.48);
     background-color: var(--blanco);

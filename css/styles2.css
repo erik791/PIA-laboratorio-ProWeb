@@ -23,6 +23,8 @@ body {
     background-image: linear-gradient(rgb(238, 255, 0), rgb(243, 3, 3));
 }
 
+
+
 #articulo {
     width: 150px; /* Ajusta el tamaño según tus necesidades */
     height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
