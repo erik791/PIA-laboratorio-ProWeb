@@ -74,8 +74,6 @@ if ($emailCount > 0) {
                         $rol);
 
     if ($stmt->execute()) {
-        #echo "Cuenta creada correctamente.";
-        
         echo true;
     } else {
         die("Error al crear la cuenta: " . $stmt->error);

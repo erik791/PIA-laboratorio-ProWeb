@@ -1,5 +1,5 @@
 
- $(document).ready(function() {
+$(document).ready(function() {
     $('#myForm').submit(function(event) {
         event.preventDefault(); // Evitar el envío normal del formulario
         var formData = $(this).serialize(); // Obtener los datos del formulario
@@ -23,7 +23,10 @@
                         $('.alert').addClass("hide");
                     },5000);
                 } else {
-                    window.location.href = "index.html";
+                    if(response == 1)
+                        window.location.href = "menuAdministrador.html";
+                    else if(response == 2)
+                        window.location.href = "index.html";
                 }
             }
         });
@@ -40,12 +43,11 @@
             success: function(response) {
                 // Manejar la respuesta del servidor
                 if(response == true){
-                    window.location.href = "login.html";
-                    response = "Cuenta creada exitosamente.";
+                    txtResponse = "Cuenta creada exitosamente.";
                 }
                 // Manejar la respuesta del servidor
                 var parrafo = document.getElementById("ms-advertecia");
-                parrafo.textContent = response;
+                parrafo.textContent = txtResponse;
                 $('.alert').addClass("show");
                 $('.alert').removeClass("hide");
                 $('.alert').addClass("showAlert");

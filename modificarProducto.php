@@ -1,3 +1,5 @@
+<?php $mysqli = require "php/database.php"; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,21 +10,18 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
   <link href="css/productosstyles.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <h1>Registrar Producto con Imagen</h1>
+  <h1>Modificar Producto</h1>
 
   <form class="formulario sombra" action="php/process-products.php" method="POST" enctype="multipart/form-data">
     <fieldset>
-    
-    <legend>Registro de Productos</legend>
-
+  
     <div class="contenedor-campos">
 
     <div class="campo">
     <label for="nombre">Nombre del producto:</label>
-    <input class="input-text" type="text" id="nombre" name="nombre" required><br>
+    <input class="input-text" type="text" id="nombre" name="nombre" value="<?php echo $nombreProducto ?>" required><br>
     </div>
     
     <div class="campo">
@@ -47,11 +46,15 @@
         <option value="2">Vinilo</option>
       </select>
     </div>
+  
+    </div>
+
     <input class="boton w-100" type="submit" value="Registrar Producto">
-    
+
   </fieldset>
   </form>
 <br>
+
 </body>
 </html>
 

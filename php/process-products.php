@@ -40,9 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         // Ejecutar la consulta
         if ($stmt->execute()) { 
-          echo "Registro Exitoso.";
+          echo "registro exitoso";
           $stmt->close();
-
+          exit();
+          
         } else {
           echo "Registro Fallido.";
 

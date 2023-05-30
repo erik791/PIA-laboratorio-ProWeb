@@ -17,19 +17,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (password_verify($_POST["password"], $user["Password_hash"])) {
             
             session_start();
-            
             session_regenerate_id();
             
             $_SESSION["user_id"] = $user["id_Usuario"];
+            $return = $user["Rol_id"]; // Obtiene el valor de la columna "Rol_id" 
             
-            $texto = true;
         } else {
-            $texto = "Datos incorrectos";
+            $return = "Datos incorrectos";
         }
+
     }else{
-        $texto = "vacio";
+        $return = "vacio";
     }
 }
 
-echo $texto;
+echo $return;
 ?>
