@@ -2,9 +2,7 @@
 body{
   height: 100vh;
   overflow: hidden;
-  background: #0f0c29;
-  background: -webkit-linear-gradient(to right, rgb(187, 186, 186), #c6c5cf, #101011);
-  background: linear-gradient(to right, #101011, #b7b7b9, #626164);
+  background: linear-gradient(rgb(238, 255, 0), rgb(190, 48, 48));
   display: flex;
   align-items: center;
   justify-content: center;
