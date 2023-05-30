@@ -1,4 +1,23 @@
 
+function aagregarProducto() {
+    alert("si funciona");
+    // Enviar la solicitud Ajax para eliminar el registro
+    $.ajax({
+        url: "php/process-products.php",
+        type: "POST",
+        data: formData,
+        success: function(response) {
+            alert(response);
+        },
+        error: function() {
+            // Error al realizar la solicitud Ajax
+            alert("Error en la solicitud Ajax");
+        }
+    });
+    
+}
+
+
 
 function eliminarProducto(idProducto) {
     
@@ -6,7 +25,7 @@ function eliminarProducto(idProducto) {
     $.ajax({
         url: "php/modificar.php",
         type: "POST",
-        data: { eliminar: true, inputID: idProducto },
+        data: {eliminar: true, inputID: idProducto },
         success: function(response) {
             if (response == 2) {
                 // Eliminación exitosa

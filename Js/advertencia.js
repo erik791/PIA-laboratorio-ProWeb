@@ -10,10 +10,15 @@ $(document).ready(function() {
             data: formData,
             success: function(response) {
                 // Manejar la respuesta del servidor
-                if (response != true) {
+                if(response == "1")
+                    window.location.href = "Menuadmin.html";
+                else if(response == "2")
+                    window.location.href = "index.html";
+                else{
                     // Manejar la respuesta del servidor
                     var parrafo = document.getElementById("ms-advertecia");
                     parrafo.textContent = response;
+
 
                     $('.alert').addClass("show");
                     $('.alert').removeClass("hide");
@@ -22,11 +27,6 @@ $(document).ready(function() {
                         $('.alert').removeClass("show");
                         $('.alert').addClass("hide");
                     },5000);
-                } else {
-                    if(response == 1)
-                        window.location.href = "menuAdministrador.html";
-                    else if(response == 2)
-                        window.location.href = "index.html";
                 }
             }
         });
@@ -42,19 +42,32 @@ $(document).ready(function() {
             data: formData,
             success: function(response) {
                 // Manejar la respuesta del servidor
-                if(response == true){
-                    txtResponse = "Cuenta creada exitosamente.";
-                }
-                // Manejar la respuesta del servidor
                 var parrafo = document.getElementById("ms-advertecia");
-                parrafo.textContent = txtResponse;
-                $('.alert').addClass("show");
-                $('.alert').removeClass("hide");
-                $('.alert').addClass("showAlert");
-                setTimeout(function(){
-                    $('.alert').removeClass("show");
-                    $('.alert').addClass("hide");
-                },5000); 
+                var estilo = document.getElementsByClassName("alert hide");
+                if(response == true){
+                    parrafo.textContent = "Cuenta creada exitosamente";
+                    // Manejar la respuesta del servidor
+                    $('.alert').addClass("");
+                    $('.alert').addClass("show");
+                    $('.alert').removeClass("hide");
+                    $('.alert').addClass("showAlert");
+                    setTimeout(function(){
+                        $('.alert').removeClass("show");
+                        $('.alert').addClass("hide");
+                    },5000);
+                
+                }else{
+                    parrafo.textContent = txtResponse;
+                    // Manejar la respuesta del servidor
+                    $('.alert').addClass("show");
+                    $('.alert').removeClass("hide");
+                    $('.alert').addClass("showAlert");
+                    setTimeout(function(){
+                        $('.alert').removeClass("show");
+                        $('.alert').addClass("hide");
+                    },5000);
+                }
+                 
             }
         });
     });

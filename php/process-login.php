@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             session_regenerate_id();
             
             $_SESSION["user_id"] = $user["id_Usuario"];
-            $return = $user["Rol_id"]; // Obtiene el valor de la columna "Rol_id" 
-            
+            echo $user["Rol_id"]; // Obtiene el valor de la columna "Rol_id" 
+            exit;
         } else {
             $return = "Datos incorrectos";
         }

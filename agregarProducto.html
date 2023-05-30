@@ -7,8 +7,9 @@
   <link rel="preload" href="css/normalize.css" as="style">
   <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
-  <link href="css/productosstyles.css" rel="stylesheet">
+  <link href="css/agregProd.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="Js/eventosCRUD.js"></script>
 </head>
 <body>
   <h1>Registrar Producto con Imagen</h1>
@@ -47,11 +48,15 @@
         <option value="2">Vinilo</option>
       </select>
     </div>
-    <input class="boton w-100" type="submit" value="Registrar Producto">
+    <input class="boton w-100" type="submit" value="Registrar Producto" onclick="agregarProducto()">
     
   </fieldset>
   </form>
-<br>
+  <br>
+  <a href="CRUD-productos.php">
+  <input class="boton w-100" type="submit" value="Atras">
+  </a>
+  <br>
 </body>
 </html>
 

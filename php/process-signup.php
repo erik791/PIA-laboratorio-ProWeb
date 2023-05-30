@@ -40,7 +40,9 @@ if($_POST["pass"] !== $_POST["pass_confirmation"]){
 // Metodo hashing para mantener seguridad de contraseña
 $password_hash = password_hash($_POST["pass"], PASSWORD_DEFAULT);
 
-$rol = 1;
+$rol = 2;
+
+
 
 $mysqli = require __DIR__ . "/database.php";
 

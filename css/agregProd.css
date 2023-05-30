@@ -91,7 +91,7 @@ h1,h2,h3 {
 }
 
 .boton{
-    background-color: var(--secundario);
+    background-color: var(--oscuro);
     color: var(--blanco);
     padding: 1rem 3rem;
     margin-top: 1rem;

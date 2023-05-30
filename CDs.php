@@ -81,9 +81,10 @@
                 
             </div>
         </main>
-        <br>
-        <footer class="footer">
-            <p class="titulo2" align="center">Lo mejor de la musica en un solo lugar NEA<span>MX</span></p>
-        </footer>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
     </body>
+    <footer class="footer">
+            <p class="titulo2" align="center">Lo mejor de la musica en un solo lugar NEA<span>MX</span></p>
+    </footer>
 </html>

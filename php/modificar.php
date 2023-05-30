@@ -1,10 +1,8 @@
 <?php
 $mysqli = require __DIR__ . "/database.php";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  if (isset($_POST['modificar'])) {
-    }
-
-  } elseif (isset($_POST['eliminar'])) {
+  
+  if (isset($_POST['eliminar'])) {
     $inputID = $_POST['inputID'];
 
     // Acción de eliminar el registro con el ID $inputID
@@ -19,6 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   } else {
     echo "Acción desconocida";
   }
-
+}
 ?>
 

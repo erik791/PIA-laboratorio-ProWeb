@@ -22,6 +22,7 @@ body {
     font-size: 16px; /* 1rem = 10px */
     font-family: 'Krub', sans-serif;
     background-image: linear-gradient(rgb(238, 255, 0), rgb(243, 3, 3));
+    
 }
 .contenedor {
     max-width: 120rem;
@@ -128,7 +129,11 @@ h1,h2,h3 {
     color: var(--oscuro);
 }
 
-
+/** Footer **/
+.footer {
+   
+    justify-content: center;
+}
 
 /* Globales */
 *::after,
@@ -317,4 +322,3 @@ header{
     padding: 15px 10px;
     cursor: pointer;
 }
-
